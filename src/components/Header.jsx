@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
-const Header = ({ watchList = [], setShowSearch }) => {
+const Header = () => {
   const [sticky, setSticky] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 80);
@@ -22,9 +21,9 @@ const Header = ({ watchList = [], setShowSearch }) => {
         </div>
 
         <nav className="nav">
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/Movies" onClick={() => setMenuOpen(false)}>Movies</Link>
-          <Link to="/Register" onClick={() => setMenuOpen(false)}>Register</Link>
+          <Link to="/">Home</Link>
+          <Link to="/Movies">Movies</Link>
+          <Link to="/Register">Register</Link>
          
         </nav>
 

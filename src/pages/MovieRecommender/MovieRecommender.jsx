@@ -7,7 +7,6 @@ function MovieRecommender() {
   const [genre, setGenre] = useState("");
   const [minRating, setMinRating] = useState(0); // ✅ правильное состояние
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [director, setDirector] = useState("");
 
   useEffect(() => {
     Papa.parse("/imdb_top_1000.csv", {
