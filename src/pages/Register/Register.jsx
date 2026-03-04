@@ -10,7 +10,6 @@ export default function RegisterPage() {
   });
 
   const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -59,7 +58,7 @@ export default function RegisterPage() {
       <div className="overlay"></div>
 
       <form className="register-card" onSubmit={handleSubmit}>
-        <h1 className="title"> MovieApp</h1>
+        <h1 className="title">MovieApp</h1>
         <h2>Create Account</h2>
 
         <div className="input-group">
@@ -84,7 +83,16 @@ export default function RegisterPage() {
           {errors.email && <span>{errors.email}</span>}
         </div>
 
-       
+        <div className="input-group">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+          />
+          {errors.password && <span>{errors.password}</span>}
+        </div>
 
         <div className="input-group">
           <input
@@ -102,7 +110,10 @@ export default function RegisterPage() {
         </button>
 
         <p className="login-link">
-          Already have an account? <a href="#">Login</a>
+          Already have an account? 
+          <button type="button" className="link-btn">
+            Login
+          </button>
         </p>
       </form>
     </div>
